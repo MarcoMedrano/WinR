@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WinR.ViewModel;
 
 namespace WinR
 {
@@ -46,18 +36,24 @@ namespace WinR
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            this.Process();
-            this.Close();
+            //this.Process();
+            //this.Close();
         }
 
         private void Process()
         {
-            
+            var commandLineArgs = Environment.GetCommandLineArgs();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            //if (this.IsVisible)
+            //    this.Close();
         }
     }
 }

@@ -4,15 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WinR"
+        xmlns:my="clr-namespace:WinR.ViewModel"
+        xmlns:set="clr-namespace:WinR.Properties"
         mc:Ignorable="d"
-        Title="WinR" Height="109.559" Width="343.901" WindowStartupLocation="CenterScreen" ToolTip="WinR" Topmost="True" AllowDrop="True" ResizeMode="NoResize" ShowInTaskbar="False" Opacity="0.85" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown" KeyUp="Window_KeyUp">
+        Title="WinR" Height="109.559" Width="343.901" WindowStartupLocation="CenterScreen" ToolTip="WinR" AllowDrop="True" ResizeMode="NoResize" ShowInTaskbar="False" Opacity="0.85" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown" KeyUp="Window_KeyUp" Deactivated="Window_Deactivated" Topmost="True">
+    <Window.DataContext>
+        <my:FileToShortCutViewModel></my:FileToShortCutViewModel>
+    </Window.DataContext>
     <Grid>
+        <Grid.BindingGroup>
+            <BindingGroup/>
+        </Grid.BindingGroup>
 
         <Label x:Name="titleLabel" Content=" WinR" Height="20" VerticalAlignment="Top" FontSize="9.333" BorderBrush="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="98.563,43.608,0,46.557" TextWrapping="Wrap" Width="162" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBox Text="{Binding ShortcutName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="textBox" HorizontalAlignment="Left" Margin="98.563,43.608,0,46.557" TextWrapping="Wrap" Width="162" d:LayoutOverrides="VerticalAlignment"/>
         <Label x:Name="label" Content="Shorcut name" HorizontalAlignment="Left" Margin="10,39.56,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.433,-0.68"/>
-        <CheckBox x:Name="asAdminCheckBox" Content="As Administrator" HorizontalAlignment="Left" Margin="98.563,67.98,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="okButton" Content="OK" HorizontalAlignment="Left" Margin="265.563,43.608,0,46.557" Width="50" d:LayoutOverrides="VerticalAlignment" IsDefault="True" Click="button_Click"/>
+        <CheckBox x:Name="asAdminCheckBox" Content="As Administrator" HorizontalAlignment="Left" Margin="98.563,67.98,0,0" VerticalAlignment="Top" IsChecked="{Binding RunAsAdministrator, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding CanRunAsAdministrator, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="okButton" Command="{Binding OkCommand, Mode=TwoWay}" Content="OK" HorizontalAlignment="Left" Margin="265.563,43.608,0,46.557" Width="50" d:LayoutOverrides="VerticalAlignment" IsDefault="True" Click="button_Click"/>
         <Button x:Name="cancelButton" Content="X" HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" Width="20" IsCancel="True" Margin="0,0.004,-0.164,0" IsTabStop="False" Click="cancelButton_Click" FontSize="9.333">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">

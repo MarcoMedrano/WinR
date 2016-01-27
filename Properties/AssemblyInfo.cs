@@ -3,16 +3,17 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
+using WinR;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WinR")]
+[assembly: AssemblyTitle(WinRAssemblyInfo.Product)]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("InContact")]
-[assembly: AssemblyProduct("WinR")]
-[assembly: AssemblyCopyright("Copyright © InContact 2016")]
+[assembly: AssemblyCompany(WinRAssemblyInfo.Company)]
+[assembly: AssemblyProduct(WinRAssemblyInfo.Product)]
+[assembly: AssemblyCopyright(WinRAssemblyInfo.Copyright)]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
