@@ -34,5 +34,17 @@ namespace WinR.Properties {
                 this["RunAsAdministrator"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ShortcutsPath {
+            get {
+                return ((string)(this["ShortcutsPath"]));
+            }
+            set {
+                this["ShortcutsPath"] = value;
+            }
+        }
     }
 }

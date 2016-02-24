@@ -1,0 +1,36 @@
+﻿<Window x:Class="WinR.Views.SettingsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinR.Views"
+        mc:Ignorable="d"
+        Title="SettingsView" Height="300" Width="395.891">
+    <Grid>
+        <StackPanel Margin="10,10,9.8,145.4">
+            <CheckBox x:Name="checkBox" Content="Automatic Updates (in background, only when the app is opened)"/>
+            <DocumentViewer x:Name="documentViewer" Height="82" Margin="0,0,-0.2,0"/>
+        </StackPanel>
+        <Button x:Name="okButton" Command="{Binding OkCommand, Mode=TwoWay}" Content="OK" Margin="0,241,9.6,10.4" IsDefault="True" RenderTransformOrigin="0.6,0.744" HorizontalAlignment="Right" Width="47" Click="okButton_Click"/>
+        <TextBlock x:Name="textBlock" Margin="10,241,57,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="8"><Run Text="By pressing &quot;OK&quot; you free me of any damage that this software "/><Run Text="could cause "/><Run Text="on your computer and you leave your soul to me 3:)"/></TextBlock>
+        <Grid Height="100" Margin="10,130,0,0" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28*"/>
+                <RowDefinition Height="28*"/>
+                <RowDefinition Height="28*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="265*"/>
+                <ColumnDefinition Width="56*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="label" Content="Suggestions, bug reports, etc..." Margin="0"/>
+            <Button x:Name="emailButton" Content="email me!" Margin="10,5,10,5" VerticalAlignment="Top" FontSize="8" Grid.Column="1" Height="14" Click="emailButton_Click"/>
+            <Label x:Name="label_Copy" Content="Shortcuts path" Grid.Row="1" HorizontalAlignment="Left" Width="86" Margin="0"/>
+            <TextBox x:Name="shortcutPathTextBox" Margin="90,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="c:\...." Height="16" VerticalAlignment="Top"/>
+            <Button x:Name="changeButton" Content="Change..." Margin="10,5,10,5" VerticalAlignment="Top" FontSize="8" Grid.Column="1" Height="14" Click="emailButton_Click" Grid.Row="1"/>
+            <Label x:Name="label_Copy1" Content="If you enjoy using your shortcuts, please consider" Margin="0" Grid.Row="2"/>
+            <Button x:Name="changeButton_Copy" Content="Donate!" Margin="10,5,10,5" VerticalAlignment="Top" FontSize="8" Grid.Column="1" Height="14" Click="emailButton_Click" Grid.Row="2"/>
+        </Grid>
+
+    </Grid>
+</Window>

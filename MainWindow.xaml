@@ -17,10 +17,10 @@
         </Grid.BindingGroup>
 
         <Label x:Name="titleLabel" Content=" WinR" Height="20" VerticalAlignment="Top" FontSize="9.333" BorderBrush="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
-        <TextBox Text="{Binding ShortcutName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="textBox" HorizontalAlignment="Left" Margin="98.563,43.608,0,46.557" TextWrapping="Wrap" Width="162" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBox Text="{Binding ShortcutName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="textBox" HorizontalAlignment="Left" Margin="99,44,0,46.6" TextWrapping="Wrap" Width="127"/>
         <Label x:Name="label" Content="Shorcut name" HorizontalAlignment="Left" Margin="10,39.56,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.433,-0.68"/>
         <CheckBox x:Name="asAdminCheckBox" Content="As Administrator" HorizontalAlignment="Left" Margin="98.563,67.98,0,0" VerticalAlignment="Top" IsChecked="{Binding RunAsAdministrator, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding CanRunAsAdministrator, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button x:Name="okButton" Command="{Binding OkCommand, Mode=TwoWay}" Content="OK" HorizontalAlignment="Left" Margin="265.563,43.608,0,46.557" Width="50" d:LayoutOverrides="VerticalAlignment" IsDefault="True" Click="button_Click"/>
+        <Button x:Name="okButton" Command="{Binding OkCommand, Mode=TwoWay}" Content="OK" HorizontalAlignment="Left" Margin="281,44,0,46.6" Width="42" IsDefault="True" Click="button_Click"/>
         <Button x:Name="cancelButton" Content="X" HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" Width="20" IsCancel="True" Margin="0,0.004,-0.164,0" IsTabStop="False" Click="cancelButton_Click" FontSize="9.333">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -37,6 +37,13 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="231,44,0,0"  Height="19" SelectedIndex="0">
+            <ListBoxItem Content="Windows (Default)"/>
+            <ListBoxItem Content="Visual Studio 2013"/>
+            <ListBoxItem Content="Visual Studio 2010"/>
+            <ListBoxItem Content="Visual Studio 2011"/>
+        </ComboBox>
+        <Button x:Name="button" Content="☼" Margin="325,90,3,3.6" ToolTip="Settings" Padding="1,0,1,1"/>
 
     </Grid>
 </Window>
