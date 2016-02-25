@@ -6,15 +6,26 @@
         xmlns:local="clr-namespace:WinR"
         xmlns:my="clr-namespace:WinR.ViewModel"
         xmlns:set="clr-namespace:WinR.Properties"
+        xmlns:model="clr-namespace:WinR.Model"
         mc:Ignorable="d"
         Title="WinR" Height="109.559" Width="343.901" WindowStartupLocation="CenterScreen" ToolTip="WinR" AllowDrop="True" ResizeMode="NoResize" ShowInTaskbar="False" Opacity="0.85" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown" KeyUp="Window_KeyUp" Deactivated="Window_Deactivated" Topmost="True">
     <Window.DataContext>
         <my:FileToShortCutViewModel></my:FileToShortCutViewModel>
     </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate x:Key="comboboxItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Icon}"></Image>
+                <!--Height="30"-->
+                <TextBlock Text="{Binding DisplayName}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.BindingGroup>
             <BindingGroup/>
         </Grid.BindingGroup>
+
 
         <Label x:Name="titleLabel" Content=" WinR" Height="20" VerticalAlignment="Top" FontSize="9.333" BorderBrush="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
         <TextBox Text="{Binding ShortcutName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="textBox" HorizontalAlignment="Left" Margin="99,44,0,46.6" TextWrapping="Wrap" Width="127"/>
@@ -37,12 +48,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="231,44,0,0"  Height="19" SelectedIndex="0">
-            <ListBoxItem Content="Windows (Default)"/>
-            <ListBoxItem Content="Visual Studio 2013"/>
-            <ListBoxItem Content="Visual Studio 2010"/>
-            <ListBoxItem Content="Visual Studio 2011"/>
-        </ComboBox>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="231,44,0,0" SelectedIndex="0" Height="19" ItemsSource="{Binding ExecutableFiles}" ItemTemplate="{StaticResource comboboxItemTemplate}"/>
         <Button x:Name="button" Content="☼" Margin="325,90,3,3.6" ToolTip="Settings" Padding="1,0,1,1"/>
 
     </Grid>
