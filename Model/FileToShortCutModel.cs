@@ -102,6 +102,7 @@ namespace WinR.Model
                 string appPath = displayableFile.Command.Remove(displayableFile.Command.LastIndexOf(".exe", StringComparison.InvariantCultureIgnoreCase) + 4);
                 displayableFile.IconPath = displayableFile.IconPath ?? appPath;
                 displayableFile.DisplayName = displayableFile.DisplayName ?? program;
+                //displayableFile.Icon = DisplayableFile.GetImage(displayableFile.IconPath);
                 displayableFile.Icon = IconHelper.ExtractIconFromFile(displayableFile.IconPath);
             }
             catch (Exception e)
