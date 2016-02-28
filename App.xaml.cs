@@ -13,5 +13,10 @@ namespace WinR
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            if (Environment.GetCommandLineArgs().Length <= 1)
+                this.StartupUri = new Uri("Views/SettingsView.xaml", UriKind.Relative);
+        }
     }
 }

@@ -8,11 +8,10 @@ namespace WinR.Model
 {
     class DisplayableFile
     {
-        internal static readonly DisplayableFile Default = new DisplayableFile { DisplayName = "Windows (default)", Icon = null };
+        internal static readonly DisplayableFile Default = new DisplayableFile { DisplayName = "Windows (default)", Icon = null, Command = "%"};
+
         public string FullPath { get; set; }
-
         public string DisplayName { get; set; }
-
         public ImageSource Icon { get; set; }
         public string Command { get; set; }
         public string IconPath { get; set; }

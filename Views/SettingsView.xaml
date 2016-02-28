@@ -5,32 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WinR.Views"
         mc:Ignorable="d"
-        Title="SettingsView" Height="300" Width="395.891">
-    <Grid>
-        <StackPanel Margin="10,10,9.8,145.4">
-            <CheckBox x:Name="checkBox" Content="Automatic Updates (in background, only when the app is opened)"/>
-            <DocumentViewer x:Name="documentViewer" Height="82" Margin="0,0,-0.2,0"/>
-        </StackPanel>
-        <Button x:Name="okButton" Command="{Binding OkCommand, Mode=TwoWay}" Content="OK" Margin="0,241,9.6,10.4" IsDefault="True" RenderTransformOrigin="0.6,0.744" HorizontalAlignment="Right" Width="47" Click="okButton_Click"/>
-        <TextBlock x:Name="textBlock" Margin="10,241,57,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="8"><Run Text="By pressing &quot;OK&quot; you free me of any damage that this software "/><Run Text="could cause "/><Run Text="on your computer and you leave your soul to me 3:)"/></TextBlock>
-        <Grid Height="100" Margin="10,130,0,0" VerticalAlignment="Top">
+        Title="Settings" Height="560" Width="480" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <DocumentViewer x:Name="documentViewer" Margin="0,-1.5,-0.4,123.9"/>
+        <Grid Height="120" Margin="0" VerticalAlignment="Bottom" MinHeight="120">
             <Grid.RowDefinitions>
-                <RowDefinition Height="28*"/>
-                <RowDefinition Height="28*"/>
-                <RowDefinition Height="28*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="265*"/>
-                <ColumnDefinition Width="56*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="label" Content="Suggestions, bug reports, etc..." Margin="0"/>
-            <Button x:Name="emailButton" Content="email me!" Margin="10,5,10,5" VerticalAlignment="Top" FontSize="8" Grid.Column="1" Height="14" Click="emailButton_Click"/>
-            <Label x:Name="label_Copy" Content="Shortcuts path" Grid.Row="1" HorizontalAlignment="Left" Width="86" Margin="0"/>
-            <TextBox x:Name="shortcutPathTextBox" Margin="90,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="c:\...." Height="16" VerticalAlignment="Top"/>
-            <Button x:Name="changeButton" Content="Change..." Margin="10,5,10,5" VerticalAlignment="Top" FontSize="8" Grid.Column="1" Height="14" Click="emailButton_Click" Grid.Row="1"/>
-            <Label x:Name="label_Copy1" Content="If you enjoy using your shortcuts, please consider" Margin="0" Grid.Row="2"/>
-            <Button x:Name="changeButton_Copy" Content="Donate!" Margin="10,5,10,5" VerticalAlignment="Top" FontSize="8" Grid.Column="1" Height="14" Click="emailButton_Click" Grid.Row="2"/>
+            <CheckBox x:Name="checkBox" Content="Automatic Updates (in background, only when the app is opened)" Grid.RowSpan="1" VerticalContentAlignment="Center" Padding="0"/>
+            <Label x:Name="label" Content="Suggestions, bug reports, etc..." Margin="0" Padding="0" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center"/>
+            <Button x:Name="emailButton" Content="email me!" FontSize="9.333" Click="emailButton_Click" Grid.Column="1" Margin="1" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label x:Name="label_Copy" Content="Shortcuts path" Padding="0" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="0" Width="88.03" HorizontalAlignment="Left" d:LayoutOverrides="Width, LeftMargin, RightMargin"/>
+            <TextBox x:Name="shortcutPathTextBox" Margin="88.03,2.4,5.2,0" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="c:\...." Height="18" VerticalAlignment="Center"/>
+            <Button x:Name="changeButton" Content="change..." FontSize="9.333" Grid.Row="2" Margin="1" Grid.Column="1" VerticalAlignment="Center"/>
+            <Label x:Name="label_Copy1" Content="If you enjoy using your shortcuts, please consider" Margin="0" Grid.Row="3" Grid.Column="0" VerticalContentAlignment="Center" Padding="0"/>
+            <Button x:Name="changeButton_Copy" Content="Donate!" FontSize="9.333" Grid.Row="3" Margin="1" Grid.Column="1" VerticalAlignment="Center"/>
+            <TextBlock x:Name="textBlock" Margin="0" TextWrapping="Wrap" FontSize="8.667" Grid.Row="4" Grid.Column="0"><Run Text="By pressing &quot;OK&quot; you free me of any damage that this software could cause on your computer and you leave your soul to me 3:)"/></TextBlock>
+            <Button x:Name="okButton" Command="{Binding OkCommand, Mode=TwoWay}" Content="OK" IsDefault="True" Click="okButton_Click" Grid.Row="4" Grid.Column="1" FontWeight="Bold"/>
         </Grid>
-
     </Grid>
 </Window>

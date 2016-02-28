@@ -46,5 +46,29 @@ namespace WinR.Properties {
                 this["ShortcutsPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AllowAutomaticUpdates {
+            get {
+                return ((bool)(this["AllowAutomaticUpdates"]));
+            }
+            set {
+                this["AllowAutomaticUpdates"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HasRunFirstTimeConfiguration {
+            get {
+                return ((bool)(this["HasRunFirstTimeConfiguration"]));
+            }
+            set {
+                this["HasRunFirstTimeConfiguration"] = value;
+            }
+        }
     }
 }

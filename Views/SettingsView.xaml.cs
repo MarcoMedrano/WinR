@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Xps.Packaging;
 using WinR.Properties;
 
 namespace WinR.Views
@@ -14,7 +16,22 @@ namespace WinR.Views
     {
         public SettingsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+            this.LoadQuickStartToDocummentViewer();
+        }
+
+        private void LoadQuickStartToDocummentViewer()
+        {
+            string fileName = @"C:\lr.m\winR\docs\Quick Start Guide.xps";
+            XpsDocument document = new XpsDocument(fileName, FileAccess.Read);
+            this.documentViewer.Document = document.GetFixedDocumentSequence();
+            document.Close();
+
+            this.documentViewer.FitToWidth();
+
+            var contentHost = this.documentViewer.Template.FindName("PART_ContentHost", this.documentViewer) as ScrollViewer;
+            var grid = contentHost.Parent as Grid;
+            grid.Children.RemoveAt(0);
         }
 
         private void emailButton_Click(object sender, RoutedEventArgs e)
