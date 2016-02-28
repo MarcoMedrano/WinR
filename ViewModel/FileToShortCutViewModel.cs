@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Input;
+using WinR.Core;
 using WinR.Model;
 using WinR.Properties;
 //using System.Diagnostics.CodeContracts;

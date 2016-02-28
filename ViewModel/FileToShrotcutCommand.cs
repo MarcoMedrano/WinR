@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using WinR.Core;
 using WinR.Model;
 
 namespace WinR.ViewModel

@@ -74,20 +74,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="IconHelper.cs" />
+    <Compile Include="Core\IconHelper.cs" />
     <Compile Include="Model\DisplayableFile.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="RegHelper.cs" />
-    <Compile Include="ShortCutMaker.cs" />
+    <Compile Include="Core\RegHelper.cs" />
+    <Compile Include="Core\ShortCutMaker.cs" />
     <Compile Include="ViewModel\FileToShortCutViewModel.cs" />
     <Compile Include="ViewModel\FileToShrotcutCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Win32Api.cs" />
+    <Compile Include="Core\Win32Api.cs" />
     <Compile Include="WinRAssemblyInfo.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\FileToShortcutView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -95,8 +95,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\FileToShortcutView.xaml.cs">
+      <DependentUpon>FileToShortcutView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\SettingsView.xaml">
@@ -143,9 +143,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Themes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>

@@ -3,7 +3,7 @@ using System.IO;
 using IWshRuntimeLibrary;
 using WinR.Model;
 
-namespace WinR
+namespace WinR.Core
 {
     class ShortCutMaker
     {
