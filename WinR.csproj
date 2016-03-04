@@ -77,7 +77,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\Configuration\CreateShortcutsPath.cs" />
     <Compile Include="Core\Configuration\InstallWinRShortCut.cs" />
+    <Compile Include="Core\Configuration\OperationResult.cs" />
     <Compile Include="Core\Configuration\SetOperativeSystemPath.cs" />
     <Compile Include="Core\IconHelper.cs" />
     <Compile Include="Model\DisplayableFile.cs" />

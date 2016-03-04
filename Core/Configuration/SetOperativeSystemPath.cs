@@ -12,6 +12,7 @@ namespace WinR.Core.Configuration
     {
         internal void Execute(string newPath)
         {
+            
             // Validations!!! ???? UnitTests
             var oldPath = Settings.Default.ShortcutsPath;
             var allPaths = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.User);
