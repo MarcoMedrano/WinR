@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WinR.Properties;
 
 namespace WinR.Core.Configuration
 {
@@ -14,7 +10,7 @@ namespace WinR.Core.Configuration
         {
             
             // Validations!!! ???? UnitTests
-            var oldPath = Settings.Default.ShortcutsPath;
+            var oldPath = string.Empty;//Settings.Default.ShortcutsPath;
             var allPaths = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.User);
             string[] paths = allPaths.Split(';');
 

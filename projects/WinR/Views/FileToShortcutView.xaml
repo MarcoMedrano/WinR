@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:WinR"
         xmlns:my="clr-namespace:WinR.ViewModel"
         xmlns:set="clr-namespace:WinR.Properties"
-        xmlns:model="clr-namespace:WinR.Model"
         mc:Ignorable="d"
         Title="WinR" Height="109.559" Width="343.901" WindowStartupLocation="CenterScreen" ToolTip="WinR" AllowDrop="True" ResizeMode="NoResize" ShowInTaskbar="False" Opacity="0.85" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown" KeyUp="Window_KeyUp" Deactivated="Window_Deactivated" Topmost="True">
     <Window.DataContext>

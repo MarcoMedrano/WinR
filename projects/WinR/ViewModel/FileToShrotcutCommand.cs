@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using WinR.Core;
-using WinR.Model;
+using WinR.Core.Model;
 
 namespace WinR.ViewModel
 {

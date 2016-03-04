@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Input;
 using WinR.Core;
-using WinR.Model;
+using WinR.Core.Model;
 using WinR.Properties;
 //using System.Diagnostics.CodeContracts;
 

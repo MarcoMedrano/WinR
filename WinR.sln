@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinR", "WinR.csproj", "{BA254A86-B165-4C09-B28C-F391E85609E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinR", "projects\WinR\WinR.csproj", "{BA254A86-B165-4C09-B28C-F391E85609E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinR.Core", "projects\WinR.Core\WinR.Core.csproj", "{318ED414-1ECD-4D5A-A64D-6ADCD5751860}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,42 @@ Global
 		{BA254A86-B165-4C09-B28C-F391E85609E2}.Syntellect|Any CPU.ActiveCfg = Release|Any CPU
 		{BA254A86-B165-4C09-B28C-F391E85609E2}.Syntellect|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BA254A86-B165-4C09-B28C-F391E85609E2}.Syntellect|x86.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Build|Any CPU.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Build|Any CPU.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Build|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Build|Mixed Platforms.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Build|x86.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Build|x86.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Debug|x86.Build.0 = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.DebugLocal|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.DebugLocal|Mixed Platforms.Build.0 = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.DebugLocal|x86.ActiveCfg = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.DebugLocal|x86.Build.0 = Debug|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release (Version Inc)|Any CPU.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release (Version Inc)|Any CPU.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release (Version Inc)|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release (Version Inc)|Mixed Platforms.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release (Version Inc)|x86.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release (Version Inc)|x86.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release|x86.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Release|x86.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Syntellect|Any CPU.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Syntellect|Any CPU.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Syntellect|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Syntellect|Mixed Platforms.Build.0 = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Syntellect|x86.ActiveCfg = Release|Any CPU
+		{318ED414-1ECD-4D5A-A64D-6ADCD5751860}.Syntellect|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

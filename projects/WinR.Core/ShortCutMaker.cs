@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using IWshRuntimeLibrary;
-using WinR.Model;
+using WinR.Core.Model;
 
 namespace WinR.Core
 {

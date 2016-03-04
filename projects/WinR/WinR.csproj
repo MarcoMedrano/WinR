@@ -77,23 +77,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Core\Configuration\CreateShortcutsPath.cs" />
-    <Compile Include="Core\Configuration\InstallWinRShortCut.cs" />
-    <Compile Include="Core\Configuration\OperationResult.cs" />
-    <Compile Include="Core\Configuration\SetOperativeSystemPath.cs" />
-    <Compile Include="Core\IconHelper.cs" />
-    <Compile Include="Model\DisplayableFile.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Core\RegHelper.cs" />
-    <Compile Include="Core\ShortCutMaker.cs" />
     <Compile Include="ViewModel\FileToShortCutViewModel.cs" />
     <Compile Include="ViewModel\FileToShrotcutCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Core\Win32Api.cs" />
-    <Compile Include="WinRAssemblyInfo.cs" />
     <Page Include="Views\FileToShortcutView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,7 +102,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\FileToShortCutModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -159,6 +148,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinR.Core\WinR.Core.csproj">
+      <Project>{318ed414-1ecd-4d5a-a64d-6adcd5751860}</Project>
+      <Name>WinR.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
