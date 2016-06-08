@@ -8,8 +8,8 @@ namespace WinR
 {
     static class WinRAssemblyInfo
     {
-        internal const string Company = "InContact";
+        internal const string Company = "Universal";
         internal const string Product = "WinR";
-        internal const string Copyright = "Copyright © InContact 2016";
+        internal const string Copyright = "Copyright © Universal 2016";
     }
 }

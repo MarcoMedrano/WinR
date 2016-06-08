@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Xps.Packaging;
+using Squirrel;
 using WinR.Core.Configuration;
 using WinR.Properties;
 
@@ -19,6 +20,16 @@ namespace WinR.Views
         {
             this.InitializeComponent();
             this.LoadQuickStartToDocummentViewer();
+            // Having exception "Update.exe not found, not a Squirrel-installed app?" Comment next line or just copy Squirrel.exe as Update.exe on 'bin' folder.
+            this.Update();
+        }
+
+        private async void Update()
+        {
+            using (var mgr = new UpdateManager(@"c:\Users\marco.medrano\OneDrive\Público\MyApps\MyApp\Releases"))
+            {
+                await mgr.UpdateApp();
+            }
         }
 
         private void LoadQuickStartToDocummentViewer()
