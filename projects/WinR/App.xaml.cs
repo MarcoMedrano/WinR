@@ -1,22 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-
+﻿
 namespace WinR
 {
+    using System;
+    using System.Windows;
+    using WinR.Core.Installation;
+    using WinR.Properties;
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
+        static readonly InstallerGate InstallerGate = new InstallerGate();
+
+        public App()
+        {
+            InstallerGate.OnInstallationAndUpdate();
+        }
+
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             if (Environment.GetCommandLineArgs().Length <= 1)
+            {
                 this.StartupUri = new Uri("Views/SettingsView.xaml", UriKind.Relative);
+                return;
+            }
+
+            //TODO Make it async 
+            if (Settings.Default.HasAcceptedTermsOfUse == false)
+            {
+                MessageBox.Show("To continue you need to accept the terms of use.", "Taking you to settings", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                this.StartupUri = new Uri("Views/SettingsView.xaml", UriKind.Relative);
+            }
         }
     }
 }

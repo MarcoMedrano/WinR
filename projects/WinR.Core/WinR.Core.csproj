@@ -100,11 +100,13 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\CreateShortcutsPath.cs" />
-    <Compile Include="Configuration\InstallWinRShortCut.cs" />
+    <Compile Include="Configuration\CreateShortcutsDirectory.cs" />
+    <Compile Include="Installation\UninstallWinRShortCuts.cs" />
+    <Compile Include="Installation\InstallWinRShortCuts.cs" />
     <Compile Include="Configuration\OperationResult.cs" />
     <Compile Include="Configuration\SetOperativeSystemPath.cs" />
     <Compile Include="IconHelper.cs" />
+    <Compile Include="Installation\InstallerGate.cs" />
     <Compile Include="Model\DisplayableFile.cs" />
     <Compile Include="Model\FileToShortCutModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,9 +6,14 @@ namespace WinR.Core.Configuration
 {
     class SetOperativeSystemPath
     {
-        internal void Execute(string newPath)
+        private readonly string DefaultPath = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            WinRAssemblyInfo.Product + " / " + WinRAssemblyInfo.DefaultShourtcutsFolder);
+
+        internal void Execute(string path = null)
         {
-            
+            path = path ?? this.DefaultPath;
+
             // Validations!!! ???? UnitTests
             var oldPath = string.Empty;//Settings.Default.ShortcutsPath;
             var allPaths = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.User);
@@ -19,15 +24,14 @@ namespace WinR.Core.Configuration
 
             if (oldShortcutPathFound != null)
             {
-                allPaths.Replace(oldShortcutPathFound, newPath);
+                allPaths.Replace(oldShortcutPathFound, path);
             }
             else
             {
-                allPaths += allPaths.TrimEnd().EndsWith(";") ? newPath : ";" + newPath;
+                allPaths += allPaths.TrimEnd().EndsWith(";") ? path : ";" + path;
             }
 
             Environment.SetEnvironmentVariable("PATH", allPaths, EnvironmentVariableTarget.User);
-
         }
     }
 }

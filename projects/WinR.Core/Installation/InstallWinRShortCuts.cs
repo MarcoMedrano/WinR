@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IWshRuntimeLibrary;
-
-namespace WinR.Core.Configuration
+﻿namespace WinR.Core.Installation
 {
-    class InstallWinRShortCut
+    using System;
+    using System.IO;
+
+    using IWshRuntimeLibrary;
+
+    class InstallWinRShortCuts
     {
         internal void Execute()
         {

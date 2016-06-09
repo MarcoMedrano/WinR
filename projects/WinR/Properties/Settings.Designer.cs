@@ -62,12 +62,12 @@ namespace WinR.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool HasRunFirstTimeConfiguration {
+        public bool HasAcceptedTermsOfUse {
             get {
-                return ((bool)(this["HasRunFirstTimeConfiguration"]));
+                return ((bool)(this["HasAcceptedTermsOfUse"]));
             }
             set {
-                this["HasRunFirstTimeConfiguration"] = value;
+                this["HasAcceptedTermsOfUse"] = value;
             }
         }
     }

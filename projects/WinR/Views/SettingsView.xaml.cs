@@ -1,16 +1,15 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Xps.Packaging;
 using Squirrel;
 using WinR.Core.Configuration;
-using WinR.Properties;
 
 namespace WinR.Views
 {
+    using WinR.Properties;
+
     /// <summary>
     /// Interaction logic for SettingsView.xaml
     /// </summary>
@@ -20,18 +19,8 @@ namespace WinR.Views
         {
             this.InitializeComponent();
             this.LoadQuickStartToDocummentViewer();
-            // Having exception "Update.exe not found, not a Squirrel-installed app?" Comment next line or just copy Squirrel.exe as Update.exe on 'bin' folder.
-            this.Update();
         }
-
-        private async void Update()
-        {
-            using (var mgr = new UpdateManager(@"c:\Users\marco.medrano\OneDrive\Público\MyApps\MyApp\Releases"))
-            {
-                await mgr.UpdateApp();
-            }
-        }
-
+        
         private void LoadQuickStartToDocummentViewer()
         {
             string fileName = @"C:\lr.m\winR\docs\Quick Start Guide.xps";
@@ -42,23 +31,27 @@ namespace WinR.Views
             this.documentViewer.FitToWidth();
 
             var contentHost = this.documentViewer.Template.FindName("PART_ContentHost", this.documentViewer) as ScrollViewer;
-            var grid = contentHost.Parent as Grid;
-            grid.Children.RemoveAt(0);
+            var grid = contentHost?.Parent as Grid;
+            grid?.Children.RemoveAt(0);
         }
 
         private void emailButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO investigate set assunto. Also automatically can be attached logs
+            //TODO investigate set Subject. Also automatically can be attached logs
             var processInfo = new ProcessStartInfo("mailto:marco.medrano.garay@gmail.com");
             new Process {StartInfo = processInfo}.Start();
         }
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            new InstallWinRShortCut().Execute();
+            new SetOperativeSystemPath().Execute();
+            new CreateShortcutsDirectory().Execute();
+
+            Settings.Default.AllowAutomaticUpdates = this.automaticUpdatesCheckBox.IsChecked ?? false;
+            Settings.Default.HasAcceptedTermsOfUse = true;
+            Settings.Default.Save();
+
             this.Close();
-            return;
-            new SetOperativeSystemPath().Execute(shortcutPathTextBox.Text);
         }
     }
 }
