@@ -9,7 +9,7 @@ namespace WinR.Core.Configuration
 
         internal OperationResult Execute()
         {
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), WinRAssemblyInfo.Product + "/" + WinRAssemblyInfo.DefaultShourtcutsFolder);
+            string path = WinRAssemblyInfo.DefaultShortcutsPath;
             try
             {
                 if (!Directory.Exists(path))

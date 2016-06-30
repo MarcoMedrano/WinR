@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+    using System.Reflection;
 
     using IWshRuntimeLibrary;
 
@@ -10,17 +11,17 @@
         internal void Execute()
         {
             var sendToFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.SendTo), WinRAssemblyInfo.Product + ".lnk");
-            var desktopFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory), WinRAssemblyInfo.Product + ".lnk");
-            string winRexecutableFilePath = Environment.GetCommandLineArgs()[0];
+            var desktopFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), WinRAssemblyInfo.Product + ".lnk");
+            string winRexecutableFilePath = Path.Combine(new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName, WinRAssemblyInfo.Product + ".exe");
 
-            this.MakeShortcut(sendToFilePath, winRexecutableFilePath);
             this.MakeShortcut(desktopFilePath, winRexecutableFilePath);
+            this.MakeShortcut(sendToFilePath, winRexecutableFilePath);
         }
 
-        private void MakeShortcut(string fileName, string targetFileName)
+        private void MakeShortcut(string shortcutFileName, string targetFileName)
         {
             IWshShell shell = new WshShell();
-            IWshShortcut shortcut = shell.CreateShortcut(fileName) as IWshShortcut;
+            IWshShortcut shortcut = shell.CreateShortcut(shortcutFileName) as IWshShortcut;
             shortcut.TargetPath = targetFileName;
             shortcut.Description = "Made with WinR!!! \n" + targetFileName;//Add path
 

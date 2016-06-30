@@ -4,23 +4,21 @@ using System.Linq;
 
 namespace WinR.Core.Configuration
 {
+    //TODO Create another class to remove path when uninstalling
     class SetOperativeSystemPath
     {
-        private readonly string DefaultPath = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            WinRAssemblyInfo.Product + " / " + WinRAssemblyInfo.DefaultShourtcutsFolder);
 
         internal void Execute(string path = null)
         {
-            path = path ?? this.DefaultPath;
+            path = path ?? WinRAssemblyInfo.DefaultShortcutsPath;
 
             // Validations!!! ???? UnitTests
-            var oldPath = string.Empty;//Settings.Default.ShortcutsPath;
+            var oldPath = path;// For next version use: Settings.Default.ShortcutsPath;
             var allPaths = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.User);
-            string[] paths = allPaths.Split(';');
+            string[] paths = allPaths?.Split(';');
 
             // Used GetFullPath to normalize strings from '/' to '\'
-            string oldShortcutPathFound = paths.FirstOrDefault(x => Path.GetFullPath(x) == Path.GetFullPath(oldPath));
+            string oldShortcutPathFound = paths?.FirstOrDefault(x => Path.GetFullPath(x) == Path.GetFullPath(oldPath));
 
             if (oldShortcutPathFound != null)
             {

@@ -1,13 +1,12 @@
-﻿using System.Diagnostics;
-using System.IO;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Xps.Packaging;
-using Squirrel;
-using WinR.Core.Configuration;
-
-namespace WinR.Views
+﻿namespace WinR.Views
 {
+    using System.Diagnostics;
+    using System.IO;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Xps.Packaging;
+
+    using WinR.Core.Configuration;
     using WinR.Properties;
 
     /// <summary>
@@ -44,8 +43,8 @@ namespace WinR.Views
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            new SetOperativeSystemPath().Execute();
             new CreateShortcutsDirectory().Execute();
+            new SetOperativeSystemPath().Execute();
 
             Settings.Default.AllowAutomaticUpdates = this.automaticUpdatesCheckBox.IsChecked ?? false;
             Settings.Default.HasAcceptedTermsOfUse = true;

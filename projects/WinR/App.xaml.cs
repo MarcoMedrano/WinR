@@ -3,6 +3,7 @@ namespace WinR
 {
     using System;
     using System.Windows;
+
     using WinR.Core.Installation;
     using WinR.Properties;
 
@@ -13,23 +14,27 @@ namespace WinR
     {
         static readonly InstallerGate InstallerGate = new InstallerGate();
 
-        public App()
+        static App()
         {
             InstallerGate.OnInstallationAndUpdate();
         }
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+
             if (Environment.GetCommandLineArgs().Length <= 1)
             {
-                this.StartupUri = new Uri("Views/SettingsView.xaml", UriKind.Relative);
+                if (Environment.GetCommandLineArgs()[0] == "--squirrel-firstrun")
+                    return;
+                else
+                    this.StartupUri = new Uri("Views/SettingsView.xaml", UriKind.Relative);
                 return;
             }
 
             //TODO Make it async 
             if (Settings.Default.HasAcceptedTermsOfUse == false)
             {
-                MessageBox.Show("To continue you need to accept the terms of use.", "Taking you to settings", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("To continue you need to accept the terms of use", "Taking you to settings", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 this.StartupUri = new Uri("Views/SettingsView.xaml", UriKind.Relative);
             }
         }

@@ -15,6 +15,7 @@
             SquirrelAwareApp.HandleEvents(
             onInitialInstall: v =>
                 {
+                    new UninstallWinRShortCuts().Execute();
                     new InstallWinRShortCuts().Execute();
                 },
             onAppUpdate: v =>

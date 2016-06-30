@@ -54,5 +54,13 @@ namespace WinR.Views
             //if (this.IsVisible)
             //    this.Close();
         }
+
+        private void settingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsView settingsView = new SettingsView();
+            this.Hide();
+            settingsView.ShowDialog();
+            this.Show();
+        }
     }
 }
