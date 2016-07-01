@@ -6,6 +6,8 @@
 
     using IWshRuntimeLibrary;
 
+    using File = System.IO.File;
+
     class InstallWinRShortCuts
     {
         internal void Execute()
@@ -24,7 +26,7 @@
             IWshShortcut shortcut = shell.CreateShortcut(shortcutFileName) as IWshShortcut;
             shortcut.TargetPath = targetFileName;
             shortcut.Description = "Made with WinR!!! \n" + targetFileName;//Add path
-
+            shortcut.WorkingDirectory = new FileInfo(targetFileName).Directory.FullName;
             shortcut.Save();
         }
     }

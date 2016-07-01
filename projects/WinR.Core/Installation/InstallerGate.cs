@@ -1,8 +1,9 @@
 ﻿namespace WinR.Core.Installation
 {
     using System.Diagnostics;
+    using System.Windows;
+
     using Squirrel;
-    using WinR.Core.Configuration;
 
     class InstallerGate
     {
@@ -40,11 +41,10 @@
                 var res = mgr.UpdateApp().Result;
 
                 if (res != null)
-                {
-                    Debug.WriteLine("Updated to " + res.Version);
-                }
+                    MessageBox.Show("Updated to " + res.Version, "Done!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 else
-                    Debug.WriteLine("No new version");
+                    MessageBox.Show("No new versions.", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                
 
             }
         }
