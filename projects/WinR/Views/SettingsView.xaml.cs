@@ -7,6 +7,7 @@
     using System.Windows.Xps.Packaging;
 
     using WinR.Core.Configuration;
+    using WinR.Core.Installation;
     using WinR.Properties;
 
     /// <summary>
@@ -22,7 +23,7 @@
         
         private void LoadQuickStartToDocummentViewer()
         {
-            string fileName = @"C:\lr.m\winR\docs\Quick Start Guide.xps";
+            string fileName = @"Quick Start Guide.xps";
             XpsDocument document = new XpsDocument(fileName, FileAccess.Read);
             this.documentViewer.Document = document.GetFixedDocumentSequence();
             document.Close();
@@ -46,11 +47,16 @@
             new CreateShortcutsDirectory().Execute();
             new SetOperativeSystemPath().Execute();
 
-            Settings.Default.AllowAutomaticUpdates = this.automaticUpdatesCheckBox.IsChecked ?? false;
             Settings.Default.HasAcceptedTermsOfUse = true;
             Settings.Default.Save();
 
             this.Close();
+        }
+
+        private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            new InstallerGate().Update();
+            //TODO say update to last version or something.
         }
     }
 }
