@@ -25,23 +25,11 @@ namespace WinR.Views
         {
             switch (e.Key)
             {
-                case Key.Enter:
-                    //this.Process();
+                case Key.Enter:// the command is binded and executed before this.
                 case Key.Escape:
                     this.Close();
                     break;
             }
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            //this.Process();
-            //this.Close();
-        }
-
-        private void Process()
-        {
-            var commandLineArgs = Environment.GetCommandLineArgs();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -61,6 +49,11 @@ namespace WinR.Views
             this.Hide();
             settingsView.ShowDialog();
             this.Show();
+        }
+
+        private void okButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

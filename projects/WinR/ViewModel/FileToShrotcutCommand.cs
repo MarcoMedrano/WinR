@@ -28,6 +28,7 @@ namespace WinR.ViewModel
         public void Execute(object parameter)
         {
             this.shortCutMaker.Make();
+            //Environment.Exit(0);
         }
 
         public event EventHandler CanExecuteChanged;
